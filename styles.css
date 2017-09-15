@@ -15,7 +15,6 @@ header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /*justify-content: space-around;*/
   align-items: center;
   padding: 14px 0;
   background-color: #2F2235;
@@ -49,7 +48,6 @@ span {
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
-  /*padding: 0 60px;*/
 }
 
 .accordion {
@@ -68,6 +66,10 @@ span {
   width: 280px;
   margin: 0 20px;
   border: 1px solid #D1D2D3;
+}
+
+.external-tab-wrapper {
+  display: none;
 }
 
 .tab-wrapper.one {
@@ -114,16 +116,6 @@ span {
 .sign.expanded {
   background: url('/subtract.svg');
 }
-/*
-.sign:hover {
-  cursor: pointer;
-  background-color: #34d2d1;
-}*/
-
-/*.tab-content.active {
-  display: flex;
-  flex-direction: column;
-}*/
 
 .tab-image {
   border: 1px solid #D1D2D3;
@@ -157,8 +149,6 @@ span {
 }
 
 button.viewcode {
-  /*display: flex;
-  justify-content: center;*/
   width: 280px;
   height: 59px;
   background-color: #3F3244;
@@ -170,6 +160,194 @@ button.viewcode {
 
 @media only screen and (min-width: 600px) {
   
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px 80px;
+  }
   
+  .title {
+    padding: 0;
+  }
   
+  .header-divider {
+    display: none;
+  }
+  
+  .student-name {
+    padding: 0;
+  }
+  
+  .divider-wrapper {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    padding: 0 80px;
+  }
+  
+  .divider {
+    width: inherit;
+    margin: 18px 0 18px 0;
+  }
+  
+  .accordion {
+    width: 250px;
+    padding-bottom: 0;
+  }
+  
+  .tab-content-wrapper {
+    width: 435px;
+  }
+  
+  .tab-image {
+    height: 300px;
+    width: 435px;
+  }
+  
+}
+
+@media only screen and (min-width: 900px) {
+  
+  .external-tab-wrapper {
+    display: flex;
+    width: 81%;
+  }
+  
+  .button {
+    font-weight: 300;
+    justify-content: center;
+    border: 1px solid white;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: #f2f2f2;
+    margin-bottom: 1px;
+  }
+  
+  .button.active {
+    font-weight: 600;
+    border: 1px solid #d8d8d8;
+    border-bottom: 0;
+    background-color: white;
+  }
+  
+  .button:hover {
+    background-color: #34d2d1;
+    cursor: pointer;
+  }
+  
+  .tab-content-wrapper {
+    width: 81%;
+    border-top: 0;
+  }
+  
+  .tab-wrapper {
+    display: none;
+  }
+  
+  .tab-content {
+    display: flex;
+  }
+  
+  .disabled {
+    display: none;
+  }
+  
+  .tab-image {
+    height: 385px;
+    width: 350px;
+    margin: 20px;
+  }
+  
+  .text-wrapper {
+    padding: 40px 20px;
+  }
+  
+  .tab-body {
+    font-size: 1.1em;
+    line-height: 30px;
+  }
+  
+}
+
+/*Flexible cards*/
+
+.flexible-cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  top: 25px;
+  width: 83%;
+}
+
+.flexible-div {
+  text-align: left;
+  border: 1px solid #D1D2D3;
+  margin: 10px;
+  width: 30%;
+  height: 218px;
+}
+
+.flexible-title {
+  font-weight: 600;
+  padding: 20px;
+  height: 25px;
+  border: 1px solid #D1D2D3;
+}
+
+.flexible-image {
+  height: 150px;
+  width: 100%;
+}
+
+.flexible-one, .flexible-seven {
+  flex: 63%;
+}
+
+.flexible-two, .flexible-three, .flexible-four, .flexible-five, .flexible-six {
+  flex: 30%;
+}
+
+/* Header Bar */
+
+.nav-bar-wrapper {
+  display: flex;
+  text-align: center;
+  width: 81%;
+  height: 100px;
+  background-color: #D1D2D3;
+}
+
+.nav-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666666;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.search-wrapper {
+  display: flex;
+}
+
+.search-icon {
+  background-color: #F2F2F2;
+  width: 20px;
+  padding-left: 5px;
+}
+
+.search-bar {
+  background-color: #F2F2F2;
+  border: none;
+  height: 30px;
+  width: 80%;
+  padding-left: 15px;
+}
+
+@media only screen and (max-width: 950px) {
 }

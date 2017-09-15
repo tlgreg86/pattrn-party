@@ -1,20 +1,53 @@
 // application variables
 
-const tab = $('.tab-wrapper')
+const tabMobile = $('.tab-wrapper')
+const tabDesktop = $('.button')
+const tabContent = $('.tab-content-wrapper')
 
 // functions
 
-const signChange = (parentElement, currentElement, parentSibling) => {
-  $(parentElement).toggleClass('active')
-  $(currentElement).toggleClass('expanded')
+const signChange = (childElement, currentTarget, parentSibling) => {
+  $(childElement).toggleClass('expanded')
+  $(currentTarget).toggleClass('active')
   $(parentSibling).toggle()  
+}
+
+const expand = (parentsChildren, target) => {
+  $(parentsChildren).each( function() {
+    switch ($(this).hasClass('active')) {
+      case true:
+        $(this).toggleClass('active')
+        break;
+    }
+  })  
+  $(target).toggleClass('active')  
+}
+
+const toggleContent = (activeTab) => {
+  $(tabContent[0].children).each( function() {
+    switch ($(this).hasClass('disabled')) {
+      case true:
+      $(this).toggleClass('disabled')
+      break;  
+    }
+  })
+
+  $("#"+activeTab).toggleClass('disabled');
 }
 
 // event listeners
 
-tab.click((event) => {
-  console.log(event.target.nextElementSibling);
-  signChange( event.target.parentElement, 
-              event.target.nextElementSibling, 
-              event.target.parentElement.nextSibling.nextSibling);
+tabMobile.click((event) => {
+  signChange( event.currentTarget.children[1], 
+              event.currentTarget, 
+              event.currentTarget.nextElementSibling);
+})
+
+tabDesktop.click( function() {
+  let activeTab = $(this).attr('rel')
+
+  expand(event.target.parentNode.children, event.target)
+  
+  toggleContent(activeTab)
+  
 })
