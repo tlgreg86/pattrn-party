@@ -1,8 +1,9 @@
 // application variables
 
-const tabMobile = $('.tab-wrapper')
-const tabDesktop = $('.button')
-const tabContent = $('.tab-content-wrapper')
+const tabMobile = $('.tab-wrapper');
+const tabDesktop = $('.button');
+const tabContent = $('.tab-content-wrapper');
+const menuBtn = $('.menu-dropdown-btn');
 
 // functions
 
@@ -35,6 +36,26 @@ const toggleContent = (activeTab) => {
   $("#"+activeTab).toggleClass('disabled');
 }
 
+const addDropDown = () => {
+  if (!$('.drop-down-wrapper').length) {
+    $('.nav-bar-wrapper').after(
+      `<div class="drop-down-wrapper">
+        <div class="nav-link-drop-down-wrapper">
+          <a class="nav-link" href="https://www.google.com">Navigation Link 1</a>
+          <a class="nav-link" href="https://www.google.com">Navigation Link 2</a>
+          <a class="nav-link" href="https://www.google.com">Navigation Link 3</a>
+        </div>
+        <div class="drop-down-search-wrapper">
+          <img class="search-icon" height="30px" width="20" src="/search.svg" alt="search-icon">
+          <input class="search-bar" type="search" name="search" placeholder="Search">
+        </div>
+      </div>`
+    )
+  } else {
+    $('.drop-down-wrapper').remove()
+  }
+}
+
 // event listeners
 
 tabMobile.click((event) => {
@@ -50,4 +71,8 @@ tabDesktop.click( function() {
   
   toggleContent(activeTab)
   
+})
+
+menuBtn.click(() => {
+  addDropDown()
 })
