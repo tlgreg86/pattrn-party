@@ -46,7 +46,7 @@ const addDropDown = () => {
           <a class="nav-link" href="https://www.google.com">Navigation Link 3</a>
         </div>
         <div class="drop-down-search-wrapper">
-          <img class="search-icon" height="30px" width="20" src="/search.svg" alt="search-icon">
+          <img class="search-icon" height="30px" width="20" src="search.svg" alt="search-icon">
           <input class="search-bar" type="search" name="search" placeholder="Search">
         </div>
       </div>`
